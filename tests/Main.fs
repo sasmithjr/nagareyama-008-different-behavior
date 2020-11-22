@@ -31,7 +31,7 @@ module TestData =
         root.Accumulator |> AList.force |> ignore
 
         transact (fun () -> root.Values.A.Value <- 0)
-        root.Accumulator |> AList.force |> ignore
+        let _accumulated = root.Accumulator |> AList.force
 
         root
 
