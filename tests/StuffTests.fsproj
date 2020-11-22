@@ -1,12 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
+    <OutputType>Exe</OutputType>
     <LangVersion>preview</LangVersion>
     <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Util.fs" />
     <Compile Include="Main.fs" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Fable.Core" Version="$(FableCoreVersion)" />

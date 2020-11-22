@@ -4,7 +4,9 @@ module Tests
 // MIT licensed: https://github.com/MangelMaxime/Thoth/blob/153c7f9484d3ff53b70b1fb232a0b14936221331/LICENSE.md
 open FSharp.Data.Adaptive
 open Stuff
+#if FABLE_COMPILER
 open Util
+#endif
 
 module SourceData =
     open Stuff.Types.Source
@@ -23,18 +25,23 @@ module SourceData =
             member _.C = 6
             member _.Children = [| child |] }
 
+module TestData =
+    let buildAndUpdate () =
+        let root = Stuff.FromSource.create SourceData.root
+        root.Accumulator |> AList.force |> ignore
+
+        transact (fun () -> root.Values.A.Value <- 0)
+        root.Accumulator |> AList.force |> ignore
+
+        root
+
+#if FABLE_COMPILER
 let run () =
     let adpativeTests =
         testList "First tests"
             [ testList "Inner tests" [
                 testCase "Adaptive test" <| fun () ->
-                    let root = Stuff.FromSource.create SourceData.root
-                    let child = root.Children.[0]
-                    root.Accumulator |> AList.force |> ignore
-
-                    transact (fun () -> root.Values.A.Value <- 0)
-                    root.Accumulator |> AList.force |> ignore
-
+                    let root = TestData.buildAndUpdate ()
                     equal 0 0 ] ]
 
     let tests =
@@ -43,3 +50,4 @@ let run () =
     runTests tests
 
 run ()
+#endif
