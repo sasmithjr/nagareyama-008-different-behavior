@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <FSharpCoreVersion>5.0.0</FSharpCoreVersion>
+    <FSharpDataAdaptive>1.0.0</FSharpDataAdaptive>
+    <FableCoreVersion>3.1.5</FableCoreVersion>
+  </PropertyGroup>
+</Project>

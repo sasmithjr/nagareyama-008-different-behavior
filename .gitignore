@@ -1,0 +1,7 @@
+**/bin
+**/obj
+node_modules/
+.fable
+tests/output
+tests/nagareyama-output
+.ionide

@@ -1,0 +1,33 @@
+{
+    "name": "adaptive-tests",
+    "version": "0.0.1",
+    "description": "adaptive tests",
+    "main": "index.js",
+    "private": true,
+    "scripts": {
+        "test": "fable-splitter -c ./tests/splitter.config.js && mocha ./tests/output",
+        "test-nagareyama": "dotnet fable ./tests/ --outDir ./tests/nagareyama-output && mocha ./tests/nagareyama-output -r esm"
+    },
+    "dependencies": {
+        "core-js": "^2.6.9",
+        "fable-compiler": "^2.13.0",
+        "fable-loader": "^2.1.9"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/polyfill": "^7.0.0",
+        "@babel/preset-env": "^7.1.6",
+        "autoprefixer": "^9.3.1",
+        "babel-loader": "^8.0.4",
+        "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+        "esm": "^3.2.25",
+        "fable-splitter": "^2.2.1",
+        "mocha": "^8.2.1",
+        "mocha-junit-reporter": "^2.0.0",
+        "remotedev": "^0.2.8",
+        "sass-loader": "^8.0.2",
+        "set-value": "^3.0.1",
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.11"
+    }
+}
