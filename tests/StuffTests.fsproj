@@ -15,7 +15,7 @@
     <PackageReference Include="FSharp.Data.Adaptive" Version="$(FSharpDataAdaptive)" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="../src/Stuff.fsproj" />
+    <!-- <ProjectReference Include="../src/Stuff.fsproj" /> -->
   </ItemGroup>
   <Import Project="../dependencies.props" />
 </Project>
