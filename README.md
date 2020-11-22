@@ -1,3 +1,3 @@
-# nagareyama-008-warnings-as-errors
+# nagareyama-008-different-behavior
 
-Created issue referencing this repo: https://github.com/fable-compiler/Fable/issues/2288
+Created issue referencing this repo: TBD
